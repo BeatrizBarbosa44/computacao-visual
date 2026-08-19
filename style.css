@@ -157,9 +157,7 @@ nav a:hover {
 }
 
 .sobre-conteudo {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    max-width: 750px;
 }
 
 .sobre-conteudo p {
