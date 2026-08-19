@@ -196,6 +196,9 @@ nav a:hover {
 
 .numero-blog {
     width: 100px;
+    min-width: 100px;
+    flex: 0 0 100px;
+
     background-color: #0d1b3d;
     color: white;
     font-size: 33px;
