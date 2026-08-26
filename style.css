@@ -198,7 +198,6 @@ nav a:hover {
     width: 100px;
     min-width: 100px;
     flex: 0 0 100px;
-
     background-color: #0d1b3d;
     color: white;
     font-size: 33px;
@@ -214,6 +213,7 @@ nav a:hover {
     flex-direction: column;
     flex: 1;
 }
+
 .categoria {
     font-size: 12px;
     letter-spacing: 2px;
@@ -269,6 +269,77 @@ footer {
 }
 
 
+/* PÁGINA DOS POSTS */
+
+.post-pagina {
+    padding: 90px 0;
+    max-width: 900px;
+}
+
+.post-cabecalho {
+    margin-bottom: 60px;
+}
+
+.post-cabecalho h1 {
+    font-size: 38px;
+    line-height: 1.2;
+    margin: 15px 0 20px;
+    color: #172033;
+}
+
+.post-subtitulo {
+    font-size: 19px;
+    color: #69758c;
+    max-width: 750px;
+}
+
+
+/* POSTS COM CAIXA BRANCA */
+
+.post-conteudo {
+    background-color: white;
+    padding: 50px;
+    border-radius: 16px;
+    box-shadow: 0 10px 35px rgba(28, 52, 94, 0.06);
+}
+
+
+/* TEXTOS DE TODOS OS POSTS */
+
+.post-pagina article h2 {
+    font-size: 27px;
+    margin-top: 45px;
+    margin-bottom: 18px;
+    color: #0d1b3d;
+}
+
+.post-pagina article h2:first-child {
+    margin-top: 0;
+}
+
+.post-pagina article p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #536078;
+    margin-bottom: 24px;
+}
+
+
+/* BOTÃO VOLTAR */
+
+.voltar-blog {
+    display: inline-block;
+    margin-top: 35px;
+    color: #315fae;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.voltar-blog:hover {
+    text-decoration: underline;
+}
+
+
 /* CELULAR */
 
 @media (max-width: 800px) {
@@ -299,7 +370,7 @@ footer {
     }
 
     .sobre-conteudo {
-        grid-template-columns: 1fr;
+        max-width: 100%;
     }
 
     .grid-blogs {
@@ -312,6 +383,9 @@ footer {
 
     .numero-blog {
         width: 75px;
+        min-width: 75px;
+        flex: 0 0 75px;
+        font-size: 28px;
     }
 
     .titulo-secao h2 {
@@ -324,91 +398,31 @@ footer {
         gap: 10px;
     }
 
-}
-/* PÁGINA DOS POSTS */
-
-.post-pagina {
-    padding: 90px 0;
-    max-width: 900px;
-}
-
-.post-cabecalho {
-    margin-bottom: 60px;
-}
-
-.post-cabecalho h1 {
-    font-size: 38px;
-    line-height: 1.2;
-    margin: 15px 0 20px;
-    color: #172033;
-}
-
-.post-subtitulo {
-    font-size: 19px;
-    color: #69758c;
-    max-width: 750px;
-}
-
-.post-conteudo {
-    background-color: white;
-    padding: 50px;
-    border-radius: 16px;
-    box-shadow: 0 10px 35px rgba(28, 52, 94, 0.06);
-}
-
-.post-conteudo h2 {
-    font-size: 27px;
-    margin-top: 45px;
-    margin-bottom: 16px;
-    color: #0d1b3d;
-}
-
-.post-conteudo h2:first-child {
-    margin-top: 0;
-}
-
-.post-conteudo p {
-    font-size: 18px;
-    line-height: 1.8;
-    color: #536078;
-    margin-bottom: 22px;
-}
-
-.voltar-blog {
-    display: inline-block;
-    margin-top: 35px;
-    color: #315fae;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.voltar-blog:hover {
-    text-decoration: underline;
-}
-
-
-/* CELULAR - POSTS */
-
-@media (max-width: 800px) {
-
     .post-pagina {
         padding: 60px 0;
     }
 
     .post-cabecalho h1 {
-        font-size: 36px;
+        font-size: 32px;
+    }
+
+    .post-subtitulo {
+        font-size: 17px;
     }
 
     .post-conteudo {
         padding: 28px;
     }
 
-    .post-conteudo h2 {
+    .post-pagina article h2 {
         font-size: 24px;
+        margin-top: 35px;
+        margin-bottom: 15px;
     }
 
-    .post-conteudo p {
+    .post-pagina article p {
         font-size: 17px;
+        line-height: 1.7;
+        margin-bottom: 20px;
     }
-
 }
