@@ -322,3 +322,90 @@ footer {
     }
 
 }
+/* PÁGINA DOS POSTS */
+
+.post-pagina {
+    padding: 90px 0;
+    max-width: 900px;
+}
+
+.post-cabecalho {
+    margin-bottom: 60px;
+}
+
+.post-cabecalho h1 {
+    font-size: 48px;
+    line-height: 1.15;
+    margin: 15px 0 20px;
+    color: #172033;
+}
+
+.post-subtitulo {
+    font-size: 19px;
+    color: #69758c;
+    max-width: 750px;
+}
+
+.post-conteudo {
+    background-color: white;
+    padding: 50px;
+    border-radius: 16px;
+    box-shadow: 0 10px 35px rgba(28, 52, 94, 0.06);
+}
+
+.post-conteudo h2 {
+    font-size: 27px;
+    margin-top: 45px;
+    margin-bottom: 16px;
+    color: #0d1b3d;
+}
+
+.post-conteudo h2:first-child {
+    margin-top: 0;
+}
+
+.post-conteudo p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #536078;
+    margin-bottom: 22px;
+}
+
+.voltar-blog {
+    display: inline-block;
+    margin-top: 35px;
+    color: #315fae;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.voltar-blog:hover {
+    text-decoration: underline;
+}
+
+
+/* CELULAR - POSTS */
+
+@media (max-width: 800px) {
+
+    .post-pagina {
+        padding: 60px 0;
+    }
+
+    .post-cabecalho h1 {
+        font-size: 36px;
+    }
+
+    .post-conteudo {
+        padding: 28px;
+    }
+
+    .post-conteudo h2 {
+        font-size: 24px;
+    }
+
+    .post-conteudo p {
+        font-size: 17px;
+    }
+
+}
