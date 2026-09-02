@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Blog 03 | Computação Visual</title>
+
+    <link rel="stylesheet" href="style.css?v=7">
+</head>
+
+<body>
+
+    <header class="topo">
+        <div class="container topo-conteudo">
+
+            <div class="marca">
+                <h1>Computação Visual</h1>
+                <p>Blog acadêmico da disciplina</p>
+            </div>
+
+            <nav>
+                <a href="index.html#sobre">Sobre</a>
+                <a href="index.html#blogs">Blogs</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main class="container">
+
+        <section class="post-pagina">
+
+            <div class="post-cabecalho">
+
+                <span class="categoria">
+                    BLOG 03
+                </span>
+
+                <h1>
+                    Transformações de intensidade em imagens digitais
+                </h1>
+
+                <p class="post-subtitulo">
+                    Como os valores dos pixels podem ser modificados para alterar,
+                    melhorar ou destacar informações presentes em uma imagem.
+                </p>
+
+            </div>
+
+
+            <article>
+
+                <h2>
+                    Amostragem e quantização
+                </h2>
+
+                <p>
+                    Uma imagem do mundo real representa informações contínuas,
+                    enquanto o computador trabalha com informações discretas.
+                    Para transformar uma imagem real em uma imagem digital,
+                    é necessário realizar um processo de discretização.
+                </p>
+
+                <p>
+                    Nesse processo aparecem dois conceitos importantes:
+                    amostragem e quantização.
+                </p>
+
+                <p>
+                    A amostragem está relacionada à resolução da imagem.
+                    Cada pixel representa uma amostra do conteúdo original.
+                    Dessa forma, quanto maior a quantidade de pixels,
+                    maior é a quantidade de amostras utilizadas para representar
+                    a imagem.
+                </p>
+
+                <p>
+                    Já a quantização está relacionada aos níveis de intensidade
+                    que cada pixel pode assumir. Em uma imagem em escala de cinza
+                    representada com 8 bits, por exemplo, podemos trabalhar com
+                    valores entre 0 e 255.
+                </p>
+
+
+                <h2>
+                    Imagens em escala de cinza
+                </h2>
+
+                <p>
+                    Em uma imagem colorida, cada pixel normalmente possui os
+                    canais vermelho, verde e azul, conhecidos como RGB.
+                </p>
+
+                <p>
+                    Quando os três canais possuem o mesmo valor, aquele pixel
+                    representa um nível de cinza. O valor 0 representa o preto,
+                    enquanto o valor 255 representa o branco.
+                </p>
+
+                <p>
+                    Uma maneira simples de transformar uma imagem colorida em
+                    escala de cinza seria calcular a média dos valores dos três
+                    canais RGB.
+                </p>
+
+                <p>
+                    Entretanto, também é possível utilizar pesos diferentes para
+                    cada canal. Isso acontece porque a nossa percepção das cores
+                    não é exatamente igual para vermelho, verde e azul.
+                </p>
+
+
+                <h2>
+                    Modificando a intensidade dos pixels
+                </h2>
+
+                <p>
+                    Depois que uma imagem está armazenada digitalmente, podemos
+                    modificar seu conteúdo alterando os valores de intensidade
+                    de seus pixels.
+                </p>
+
+                <p>
+                    Por exemplo, aumentar o valor de intensidade de um pixel
+                    pode deixá-lo mais claro, enquanto diminuir esse valor
+                    pode fazer com que ele fique mais escuro.
+                </p>
+
+                <p>
+                    Entretanto, é necessário respeitar o intervalo permitido.
+                    Considerando uma imagem de 8 bits, os valores devem permanecer
+                    entre 0 e 255.
+                </p>
+
+                <p>
+                    Se uma operação produzir um valor maior que 255, ele deve ser
+                    limitado ao valor máximo. Da mesma forma, valores menores que
+                    zero precisam ser limitados ao valor mínimo.
+                </p>
+
+
+                <h2>
+                    Negativo da imagem
+                </h2>
+
+                <p>
+                    Uma das transformações estudadas foi o negativo da imagem.
+                    Nesse processo, os níveis de intensidade são invertidos.
+                </p>
+
+                <p>
+                    Em uma imagem de 8 bits, essa transformação pode ser realizada
+                    utilizando o valor máximo de intensidade, 255, e subtraindo
+                    dele o valor atual do pixel.
+                </p>
+
+                <p>
+                    Assim, um pixel branco passa a ser preto, um pixel preto
+                    passa a ser branco e os tons intermediários também são
+                    transformados.
+                </p>
+
+                <p>
+                    Esse tipo de transformação pode ser útil para destacar
+                    determinados detalhes que seriam difíceis de visualizar
+                    na imagem original.
+                </p>
+
+
+                <h2>
+                    Clareando e escurecendo imagens
+                </h2>
+
+                <p>
+                    Também podemos modificar uma imagem utilizando operações
+                    matemáticas sobre seus pixels.
+                </p>
+
+                <p>
+                    Uma possibilidade é adicionar um valor fixo à intensidade
+                    de todos os pixels. Isso tende a clarear a imagem.
+                    Entretanto, valores muito altos podem fazer com que várias
+                    regiões atinjam 255 e fiquem completamente brancas.
+                </p>
+
+                <p>
+                    Outra possibilidade é utilizar multiplicação. Um fator maior
+                    que 1 aumenta os níveis de intensidade, enquanto um fator
+                    entre 0 e 1 reduz esses valores e tende a escurecer a imagem.
+                </p>
+
+                <p>
+                    Essas operações mostram que nem sempre uma transformação
+                    simples e igual para todos os pixels produz o melhor resultado.
+                </p>
+
+
+                <h2>
+                    Imagens binárias
+                </h2>
+
+                <p>
+                    Nem sempre uma imagem com muitos níveis de intensidade é
+                    necessária. Dependendo da aplicação, uma imagem binária,
+                    formada apenas por preto e branco, pode ser mais adequada.
+                </p>
+
+                <p>
+                    Isso é especialmente útil quando o computador precisa
+                    reconhecer ou acompanhar apenas determinadas regiões.
+                </p>
+
+                <p>
+                    Um exemplo apresentado foi o de um robô que precisa seguir
+                    uma faixa no chão. Nesse caso, transformar a imagem para
+                    apenas duas possibilidades, como faixa branca e fundo preto,
+                    pode facilitar bastante o processamento.
+                </p>
+
+                <p>
+                    Além de simplificar as comparações, imagens binárias também
+                    podem exigir menos memória e processamento.
+                </p>
+
+
+                <h2>
+                    Transformações logarítmicas e correção gama
+                </h2>
+
+                <p>
+                    Além das operações mais simples, existem transformações
+                    não lineares capazes de modificar os níveis de intensidade
+                    de maneira mais controlada.
+                </p>
+
+                <p>
+                    A transformação logarítmica pode expandir determinados
+                    intervalos de intensidade e comprimir outros, ajudando a
+                    destacar detalhes presentes em regiões específicas da imagem.
+                </p>
+
+                <p>
+                    Outra transformação importante é a correção gama.
+                    Ela permite ajustar a forma como os níveis de intensidade
+                    são apresentados em diferentes dispositivos.
+                </p>
+
+                <p>
+                    Em algumas situações, uma imagem pode aparecer mais clara
+                    ou mais escura dependendo do dispositivo utilizado.
+                    A correção gama permite compensar essa diferença e também
+                    pode ajudar na visualização de detalhes importantes.
+                </p>
+
+
+                <h2>
+                    Aplicações
+                </h2>
+
+                <p>
+                    As transformações de intensidade podem ser utilizadas em
+                    diferentes situações, desde ajustes simples de brilho até
+                    aplicações mais específicas.
+                </p>
+
+                <p>
+                    Na área médica, por exemplo, modificar a intensidade ou
+                    utilizar o negativo de uma imagem pode ajudar um especialista
+                    a visualizar determinadas regiões com maior clareza.
+                </p>
+
+                <p>
+                    Em sistemas de visão computacional, simplificar ou transformar
+                    uma imagem também pode facilitar a identificação de objetos,
+                    regiões e padrões.
+                </p>
+
+
+                <h2>
+                    Conclusão
+                </h2>
+
+                <p>
+                    Nesta aula, compreendi que modificar uma imagem digital
+                    significa, em muitos casos, modificar matematicamente os
+                    valores de intensidade de seus pixels.
+                </p>
+
+                <p>
+                    Operações aparentemente simples, como somar, multiplicar
+                    ou inverter valores, podem produzir resultados diferentes
+                    e revelar informações que antes eram difíceis de perceber.
+                </p>
+
+                <p>
+                    Além disso, transformações como negativo, logaritmo e correção
+                    gama mostram como o processamento digital de imagens pode ser
+                    utilizado tanto para melhorar a visualização quanto para
+                    facilitar a análise de informações pelo computador.
+                </p>
+
+
+                <a href="index.html#blogs" class="voltar-blog">
+                    ← Voltar para os Blogs
+                </a>
+
+            </article>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="container rodape-conteudo">
+
+            <div>
+                <strong>Computação Visual</strong>
+                <p>Blog acadêmico</p>
+            </div>
+
+            <p>2026</p>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
