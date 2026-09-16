@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Blog 04 | Computação Visual</title>
+
+    <link rel="stylesheet" href="style.css?v=9">
+</head>
+
+<body>
+
+    <header class="topo">
+        <div class="container topo-conteudo">
+
+            <div class="marca">
+                <h1>Computação Visual</h1>
+                <p>Blog acadêmico da disciplina</p>
+            </div>
+
+            <nav>
+                <a href="index.html#sobre">Sobre</a>
+                <a href="index.html#blogs">Blogs</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main class="container">
+
+        <section class="post-pagina">
+
+            <div class="post-cabecalho">
+
+                <span class="categoria">
+                    BLOG 04
+                </span>
+
+                <h1>
+                    Interpolação de imagens
+                </h1>
+
+                <p class="post-subtitulo">
+                    Como o computador estima novos pixels ao ampliar,
+                    reduzir ou transformar uma imagem digital.
+                </p>
+
+            </div>
+
+
+            <article>
+
+                <h2>
+                    O que é interpolação?
+                </h2>
+
+                <p>
+                    A interpolação é um processo utilizado para estimar valores
+                    que não foram originalmente medidos ou amostrados.
+                </p>
+
+                <p>
+                    No processamento de imagens, ela é utilizada em operações
+                    como ampliação, redução, rotação e outras transformações
+                    geométricas.
+                </p>
+
+                <p>
+                    Quando uma imagem é redimensionada, por exemplo, podem surgir
+                    posições que não existiam na imagem original. Nesse caso,
+                    é necessário determinar quais valores de intensidade ou cor
+                    esses novos pixels devem receber.
+                </p>
+
+
+                <h2>
+                    Redimensionamento de imagens
+                </h2>
+
+                <p>
+                    Quando aumentamos o tamanho de uma imagem, precisamos criar
+                    novos pixels para preencher os espaços gerados pela nova resolução.
+                </p>
+
+                <p>
+                    Já durante uma redução, parte das informações existentes
+                    precisa ser reorganizada para representar a imagem em uma
+                    quantidade menor de pixels.
+                </p>
+
+                <p>
+                    A forma como esses valores são calculados depende do método
+                    de interpolação utilizado.
+                </p>
+
+
+                <h2>
+                    Interpolação por vizinho mais próximo
+                </h2>
+
+                <p>
+                    Um dos métodos mais simples é a interpolação por vizinho
+                    mais próximo, também chamada de nearest neighbor.
+                </p>
+
+                <p>
+                    Nesse método, cada novo pixel recebe o valor do pixel mais
+                    próximo existente na imagem original.
+                </p>
+
+                <p>
+                    Por exemplo, ao aumentar uma imagem de 3 × 3 pixels para
+                    6 × 6 pixels, os valores dos pixels originais podem ser
+                    repetidos para preencher as novas posições.
+                </p>
+
+                <p>
+                    A principal vantagem desse método é sua simplicidade e
+                    velocidade de processamento.
+                </p>
+
+                <p>
+                    Entretanto, quando a imagem é ampliada significativamente,
+                    o resultado pode apresentar uma aparência pixelada,
+                    pois os valores são apenas copiados.
+                </p>
+
+
+                <h2>
+                    Interpolação linear
+                </h2>
+
+                <p>
+                    A interpolação linear utiliza dois valores conhecidos para
+                    estimar um valor intermediário.
+                </p>
+
+                <p>
+                    Em vez de simplesmente copiar o valor do pixel mais próximo,
+                    esse método considera a posição do novo ponto entre dois
+                    valores existentes.
+                </p>
+
+                <p>
+                    Dessa maneira, é possível gerar uma transição mais suave
+                    entre diferentes intensidades.
+                </p>
+
+                <p>
+                    O resultado depende de um parâmetro que indica a posição
+                    do novo valor entre os dois pontos conhecidos.
+                </p>
+
+
+                <h2>
+                    Interpolação bilinear
+                </h2>
+
+                <p>
+                    A interpolação bilinear amplia a ideia da interpolação linear
+                    para duas dimensões.
+                </p>
+
+                <p>
+                    Nesse método, são considerados os quatro pixels mais próximos
+                    da posição que queremos estimar.
+                </p>
+
+                <p>
+                    O valor final é obtido utilizando uma média ponderada desses
+                    quatro pixels, levando em consideração a distância entre
+                    o novo pixel e seus vizinhos.
+                </p>
+
+                <p>
+                    Normalmente, primeiro é realizada uma interpolação na direção
+                    horizontal e depois uma interpolação na direção vertical.
+                </p>
+
+                <p>
+                    Por considerar mais informações ao redor do ponto, a
+                    interpolação bilinear geralmente produz transições mais suaves
+                    que o método de vizinho mais próximo.
+                </p>
+
+
+                <h2>
+                    Qual método utilizar?
+                </h2>
+
+                <p>
+                    A escolha do método de interpolação depende da aplicação.
+                </p>
+
+                <p>
+                    O vizinho mais próximo é simples e rápido, sendo útil quando
+                    a velocidade é mais importante ou quando queremos preservar
+                    exatamente os valores dos pixels originais.
+                </p>
+
+                <p>
+                    Já métodos como a interpolação linear e bilinear realizam
+                    cálculos adicionais para produzir valores intermediários,
+                    podendo gerar resultados visualmente mais suaves.
+                </p>
+
+
+                <h2>
+                    Conclusão
+                </h2>
+
+                <p>
+                    Nesta aula, compreendi que redimensionar uma imagem não
+                    significa apenas aumentar ou diminuir seu tamanho.
+                </p>
+
+                <p>
+                    Quando alteramos a resolução, o computador precisa decidir
+                    quais valores serão atribuídos aos pixels que surgem ou
+                    são reorganizados durante a transformação.
+                </p>
+
+                <p>
+                    A interpolação permite realizar essa estimativa, e diferentes
+                    métodos podem produzir resultados diferentes em relação à
+                    qualidade visual e ao custo de processamento.
+                </p>
+
+                <p>
+                    Assim, técnicas como vizinho mais próximo, interpolação linear
+                    e interpolação bilinear são importantes para entender como
+                    imagens digitais podem ser redimensionadas e transformadas.
+                </p>
+
+
+                <a href="index.html#blogs" class="voltar-blog">
+                    ← Voltar para os Blogs
+                </a>
+
+            </article>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="container rodape-conteudo">
+
+            <div>
+                <strong>Computação Visual</strong>
+                <p>Blog acadêmico</p>
+            </div>
+
+            <p>2026</p>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
