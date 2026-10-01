@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Blog 05 | Computação Visual</title>
+
+    <link rel="stylesheet" href="style.css?v=10">
+</head>
+
+<body>
+
+    <header class="topo">
+        <div class="container topo-conteudo">
+
+            <div class="marca">
+                <h1>Computação Visual</h1>
+                <p>Blog acadêmico da disciplina</p>
+            </div>
+
+            <nav>
+                <a href="index.html#sobre">Sobre</a>
+                <a href="index.html#blogs">Blogs</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main class="container">
+
+        <section class="post-pagina">
+
+            <div class="post-cabecalho">
+
+                <span class="categoria">
+                    BLOG 05
+                </span>
+
+                <h1>
+                    Detecção de bordas em imagens digitais
+                </h1>
+
+                <p class="post-subtitulo">
+                    Como mudanças de intensidade podem revelar limites,
+                    formas e estruturas importantes em uma imagem.
+                </p>
+
+            </div>
+
+
+            <article>
+
+                <h2>
+                    O que são bordas?
+                </h2>
+
+                <p>
+                    As bordas representam regiões de uma imagem em que ocorre
+                    uma mudança brusca nos valores de intensidade.
+                </p>
+
+                <p>
+                    Essas mudanças podem indicar limites entre objetos,
+                    alterações de iluminação, diferenças de materiais,
+                    profundidade ou características da superfície.
+                </p>
+
+                <p>
+                    Por isso, grande parte das informações relacionadas à
+                    forma e à estrutura dos elementos de uma imagem pode ser
+                    identificada por meio de suas bordas.
+                </p>
+
+
+                <h2>
+                    Como o computador identifica uma borda?
+                </h2>
+
+                <p>
+                    Em uma região uniforme, os pixels vizinhos geralmente
+                    possuem valores de intensidade parecidos.
+                </p>
+
+                <p>
+                    Quando um pixel apresenta uma diferença significativa em
+                    relação aos seus vizinhos, pode existir uma mudança brusca
+                    naquela região.
+                </p>
+
+                <p>
+                    Essas variações podem indicar a presença de uma borda.
+                    Para identificar essas mudanças, podemos analisar o
+                    gradiente da imagem.
+                </p>
+
+
+                <h2>
+                    Gradiente da imagem
+                </h2>
+
+                <p>
+                    O gradiente indica a direção em que ocorre a mudança mais
+                    rápida de intensidade em uma imagem.
+                </p>
+
+                <p>
+                    A magnitude do gradiente representa a intensidade dessa
+                    mudança. Quando a magnitude é alta, normalmente existe
+                    uma transição mais brusca, indicando uma borda mais nítida.
+                </p>
+
+                <p>
+                    Já valores menores podem representar mudanças suaves,
+                    como ocorre em regiões com degradê.
+                </p>
+
+
+                <h2>
+                    Derivadas e detecção de bordas
+                </h2>
+
+                <p>
+                    As derivadas são utilizadas para identificar mudanças nos
+                    níveis de intensidade da imagem.
+                </p>
+
+                <p>
+                    A primeira derivada pode ser utilizada para localizar
+                    regiões em que a intensidade varia rapidamente.
+                </p>
+
+                <p>
+                    A segunda derivada também pode ser utilizada na detecção
+                    de bordas por meio do cruzamento em zero, indicando uma
+                    mudança no comportamento dos níveis de cinza.
+                </p>
+
+
+                <h2>
+                    O problema do ruído
+                </h2>
+
+                <p>
+                    Um dos desafios da detecção de bordas é que o ruído também
+                    pode produzir mudanças bruscas entre pixels.
+                </p>
+
+                <p>
+                    Como os filtros derivativos respondem intensamente a pixels
+                    diferentes de seus vizinhos, o ruído pode gerar falsas bordas.
+                </p>
+
+                <p>
+                    Uma solução é suavizar a imagem antes de calcular seus
+                    gradientes.
+                </p>
+
+
+                <h2>
+                    Suavização com filtro Gaussiano
+                </h2>
+
+                <p>
+                    O filtro Gaussiano pode ser utilizado para reduzir o ruído
+                    antes da etapa de detecção de bordas.
+                </p>
+
+                <p>
+                    Com a suavização, pequenas variações causadas por ruído
+                    são reduzidas e o processo de detecção tende a produzir
+                    resultados mais limpos.
+                </p>
+
+                <p>
+                    Entretanto, existe um equilíbrio entre suavização e
+                    preservação de detalhes. Uma suavização muito forte pode
+                    borrar bordas importantes.
+                </p>
+
+
+                <h2>
+                    Filtros de detecção de bordas
+                </h2>
+
+                <p>
+                    Existem diferentes filtros que podem ser utilizados para
+                    aproximar o gradiente de uma imagem.
+                </p>
+
+                <p>
+                    Entre os exemplos apresentados estão os filtros de Roberts,
+                    Prewitt e Sobel.
+                </p>
+
+                <p>
+                    Esses filtros utilizam pequenas matrizes, chamadas kernels,
+                    para analisar diferenças de intensidade entre pixels
+                    vizinhos.
+                </p>
+
+                <p>
+                    Cada filtro possui características diferentes e pode
+                    apresentar resultados distintos dependendo da orientação
+                    e das estruturas presentes na imagem.
+                </p>
+
+
+                <h2>
+                    Detector de bordas de Canny
+                </h2>
+
+                <p>
+                    Um dos métodos apresentados foi o detector de bordas de Canny.
+                </p>
+
+                <p>
+                    O processo começa suavizando a imagem e calculando as
+                    derivadas nas direções horizontal e vertical.
+                </p>
+
+                <p>
+                    Em seguida, são calculadas a magnitude e a orientação do
+                    gradiente, permitindo localizar regiões com variações
+                    significativas de intensidade.
+                </p>
+
+                <p>
+                    Depois é realizada a supressão de não-máximos, responsável
+                    por reduzir a espessura das bordas detectadas.
+                </p>
+
+                <p>
+                    Por fim, são utilizados dois limiares para separar bordas
+                    fortes e fracas e realizar a ligação entre regiões que
+                    realmente pertencem à mesma borda.
+                </p>
+
+
+                <h2>
+                    O tamanho do filtro
+                </h2>
+
+                <p>
+                    O nível de suavização utilizado também influencia o resultado
+                    da detecção.
+                </p>
+
+                <p>
+                    Valores menores permitem detectar detalhes mais finos,
+                    enquanto uma suavização maior tende a identificar estruturas
+                    de maior escala e eliminar pequenos detalhes.
+                </p>
+
+                <p>
+                    Dessa forma, a escolha dos parâmetros depende do tipo de
+                    informação que se deseja encontrar na imagem.
+                </p>
+
+
+                <h2>
+                    Conclusão
+                </h2>
+
+                <p>
+                    Nesta aula, compreendi que detectar bordas significa
+                    identificar regiões onde existem mudanças significativas
+                    nos valores de intensidade dos pixels.
+                </p>
+
+                <p>
+                    Gradientes, derivadas e filtros permitem encontrar essas
+                    mudanças e destacar formas e limites presentes na imagem.
+                </p>
+
+                <p>
+                    Também percebi que o ruído interfere bastante nesse processo,
+                    tornando importante a utilização de técnicas de suavização
+                    antes da detecção.
+                </p>
+
+                <p>
+                    Métodos como Sobel, Prewitt e principalmente o detector de
+                    Canny mostram como diferentes etapas podem ser combinadas
+                    para produzir bordas mais precisas e úteis para sistemas
+                    de visão computacional.
+                </p>
+
+
+                <a href="index.html#blogs" class="voltar-blog">
+                    ← Voltar para os Blogs
+                </a>
+
+            </article>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="container rodape-conteudo">
+
+            <div>
+                <strong>Computação Visual</strong>
+                <p>Blog acadêmico</p>
+            </div>
+
+            <p>2026</p>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
