@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Blog 06 | Computação Visual</title>
+
+    <link rel="stylesheet" href="style.css?v=11">
+</head>
+
+<body>
+
+    <header class="topo">
+        <div class="container topo-conteudo">
+
+            <div class="marca">
+                <h1>Computação Visual</h1>
+                <p>Blog acadêmico da disciplina</p>
+            </div>
+
+            <nav>
+                <a href="index.html#sobre">Sobre</a>
+                <a href="index.html#blogs">Blogs</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main class="container">
+
+        <section class="post-pagina">
+
+            <div class="post-cabecalho">
+
+                <span class="categoria">
+                    BLOG 06
+                </span>
+
+                <h1>
+                    Domínio da frequência e Transformada de Fourier
+                </h1>
+
+                <p class="post-subtitulo">
+                    Como uma imagem pode ser analisada a partir das frequências
+                    que compõem suas variações de intensidade.
+                </p>
+
+            </div>
+
+
+            <article>
+
+                <h2>
+                    O que é o domínio da frequência?
+                </h2>
+
+                <p>
+                    Até agora, grande parte do processamento de imagens foi
+                    realizada diretamente sobre os pixels, no chamado domínio
+                    espacial.
+                </p>
+
+                <p>
+                    No domínio da frequência, a imagem passa a ser analisada
+                    de outra forma. Em vez de observar diretamente os valores
+                    dos pixels, analisamos as frequências presentes na imagem.
+                </p>
+
+                <p>
+                    Essas frequências estão relacionadas à velocidade com que
+                    os valores de intensidade variam ao longo da imagem.
+                </p>
+
+
+                <h2>
+                    Transformada de Fourier
+                </h2>
+
+                <p>
+                    A Transformada de Fourier é uma ferramenta utilizada para
+                    converter uma imagem do domínio espacial para o domínio
+                    da frequência.
+                </p>
+
+                <p>
+                    A ideia de Fourier é que uma função pode ser representada
+                    como uma combinação de ondas senoidais e cossenoidais de
+                    diferentes frequências.
+                </p>
+
+                <p>
+                    Assim, uma imagem também pode ser analisada considerando
+                    as diferentes frequências que formam suas variações de
+                    intensidade.
+                </p>
+
+
+                <h2>
+                    Espectro de frequência
+                </h2>
+
+                <p>
+                    Para visualizar a Transformada de Fourier, normalmente
+                    trabalhamos com a magnitude do seu resultado.
+                </p>
+
+                <p>
+                    Essa representação é chamada de espectro de Fourier ou
+                    espectro da frequência.
+                </p>
+
+                <p>
+                    O espectro mostra quais frequências estão presentes na
+                    imagem e com qual intensidade cada uma delas aparece.
+                </p>
+
+                <p>
+                    Frequências mais baixas costumam estar associadas a regiões
+                    com variações suaves de intensidade, enquanto frequências
+                    mais altas aparecem em regiões com mudanças mais rápidas,
+                    como bordas e detalhes.
+                </p>
+
+
+                <h2>
+                    Transformada inversa
+                </h2>
+
+                <p>
+                    Depois de transformar uma imagem para o domínio da frequência,
+                    também é possível realizar o processo inverso.
+                </p>
+
+                <p>
+                    A Transformada de Fourier Inversa permite recuperar a imagem
+                    no domínio espacial.
+                </p>
+
+                <p>
+                    Isso significa que podemos transformar uma imagem, modificar
+                    determinadas frequências e depois reconstruir o resultado
+                    novamente como uma imagem.
+                </p>
+
+
+                <h2>
+                    Filtragem no domínio da frequência
+                </h2>
+
+                <p>
+                    Uma das principais aplicações do domínio da frequência é
+                    a filtragem de imagens.
+                </p>
+
+                <p>
+                    Em vez de aplicar diretamente uma máscara sobre os pixels,
+                    podemos modificar determinadas regiões do espectro de
+                    frequência.
+                </p>
+
+                <p>
+                    A convolução realizada no domínio espacial corresponde
+                    a uma multiplicação no domínio da frequência.
+                </p>
+
+
+                <h2>
+                    Filtro passa-baixa
+                </h2>
+
+                <p>
+                    O filtro passa-baixa preserva principalmente as frequências
+                    mais baixas da imagem e reduz as frequências mais altas.
+                </p>
+
+                <p>
+                    Como as altas frequências estão relacionadas a detalhes,
+                    bordas e ruídos, reduzir essas frequências faz com que a
+                    imagem fique mais suavizada ou borrada.
+                </p>
+
+                <p>
+                    Quanto maior o efeito do filtro, maior tende a ser a perda
+                    de detalhes da imagem.
+                </p>
+
+
+                <h2>
+                    Amostragem e frequência de Nyquist
+                </h2>
+
+                <p>
+                    Outro conceito importante apresentado foi a amostragem.
+                    Para que uma função contínua possa ser processada pelo
+                    computador, ela precisa ser representada por valores
+                    discretos.
+                </p>
+
+                <p>
+                    Para conseguir recuperar corretamente o sinal original,
+                    a taxa de amostragem precisa ser suficientemente alta.
+                </p>
+
+                <p>
+                    Segundo o teorema da amostragem, essa taxa deve ser maior
+                    que o dobro da maior frequência presente no sinal.
+                    Essa condição está relacionada à frequência de Nyquist.
+                </p>
+
+
+                <h2>
+                    Aliasing
+                </h2>
+
+                <p>
+                    Quando a taxa de amostragem é insuficiente, pode ocorrer
+                    um problema chamado aliasing.
+                </p>
+
+                <p>
+                    Nesse caso, as informações de frequência se sobrepõem e
+                    o sinal original não pode mais ser recuperado corretamente.
+                </p>
+
+                <p>
+                    Em imagens digitais, o aliasing pode aparecer na forma de
+                    linhas serrilhadas, padrões que não existiam na imagem
+                    original e outras distorções visuais.
+                </p>
+
+                <p>
+                    Em vídeos, também pode ocorrer o aliasing temporal, como
+                    no conhecido efeito em que uma roda parece girar para trás.
+                </p>
+
+
+                <h2>
+                    Antialiasing
+                </h2>
+
+                <p>
+                    Para reduzir os efeitos do aliasing, pode ser aplicado um
+                    processo conhecido como antialiasing.
+                </p>
+
+                <p>
+                    Uma das estratégias é suavizar a imagem antes da
+                    reamostragem, reduzindo suas altas frequências.
+                </p>
+
+                <p>
+                    Isso pode ser feito por meio de um filtro passa-baixa,
+                    diminuindo a ocorrência de artefatos durante operações
+                    como redução de tamanho.
+                </p>
+
+
+                <h2>
+                    Conclusão
+                </h2>
+
+                <p>
+                    Nesta aula, compreendi que uma imagem pode ser analisada
+                    não apenas diretamente por seus pixels, mas também pelas
+                    frequências que compõem suas variações de intensidade.
+                </p>
+
+                <p>
+                    A Transformada de Fourier permite passar do domínio espacial
+                    para o domínio da frequência e realizar diferentes tipos
+                    de processamento.
+                </p>
+
+                <p>
+                    Conceitos como filtros passa-baixa, amostragem, frequência
+                    de Nyquist, aliasing e antialiasing mostram como a frequência
+                    está diretamente relacionada à qualidade e ao processamento
+                    de imagens digitais.
+                </p>
+
+
+                <a href="index.html#blogs" class="voltar-blog">
+                    ← Voltar para os Blogs
+                </a>
+
+            </article>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="container rodape-conteudo">
+
+            <div>
+                <strong>Computação Visual</strong>
+                <p>Blog acadêmico</p>
+            </div>
+
+            <p>2026</p>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
